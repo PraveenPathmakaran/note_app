@@ -18,6 +18,13 @@ abstract class ValueObjects<T> {
   bool isValid() => value.isRight();
   T getOrCrash() => value.fold((f) => throw UnexpectedValueError(f), id);
 
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      (f) => left(f),
+      (r) => right(unit),
+    );
+  }
+
   @override
   int get hashCode => value.hashCode;
   @override
