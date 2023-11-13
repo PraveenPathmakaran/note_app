@@ -2,7 +2,7 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../application/auth/bloc/sign_in_form_bloc.dart';
+import '../../../application/sign_in/sign_in_form_bloc.dart';
 
 class SignInFormWidget extends StatelessWidget {
   const SignInFormWidget({super.key});
@@ -15,6 +15,7 @@ class SignInFormWidget extends StatelessWidget {
             () => {},
             (either) => either.fold(
                 (failure) => Flushbar(
+                      duration: const Duration(seconds: 1),
                       message: failure.map(
                         cancelledByUser: (_) => 'Cancelled',
                         serverError: (_) => 'Server Error',
@@ -22,7 +23,7 @@ class SignInFormWidget extends StatelessWidget {
                         invalidEmailAndPasswordCombination: (_) =>
                             'Invalid email and password combination',
                       ),
-                    ),
+                    )..show(context),
                 (_) => {}));
       },
       builder: (context, state) {
@@ -31,6 +32,7 @@ class SignInFormWidget extends StatelessWidget {
               ? AutovalidateMode.always
               : AutovalidateMode.disabled,
           child: ListView(
+            padding: const EdgeInsets.all(8),
             children: <Widget>[
               const Text(
                 '📝',
@@ -93,6 +95,9 @@ class SignInFormWidget extends StatelessWidget {
                                     .signInWithEmailAndPasswordPressed());
                           },
                           child: const Text('SIGN IN'))),
+                  const SizedBox(
+                    width: 10,
+                  ),
                   Expanded(
                       child: ElevatedButton(
                           onPressed: () {
@@ -101,20 +106,21 @@ class SignInFormWidget extends StatelessWidget {
                                     .registerWithEmailAndPasswordPressed());
                           },
                           child: const Text('REGISTER'))),
-                  TextButton(
-                      onPressed: () {
-                        context.read<SignInFormBloc>().add(
-                            const SignInFormEvent.signInWithGooglePressed());
-                      },
-                      child: const Text(
-                        'SIGN IN WITH GOOGLE',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ))
                 ],
-              )
+              ),
+              TextButton(
+                  onPressed: () {
+                    context
+                        .read<SignInFormBloc>()
+                        .add(const SignInFormEvent.signInWithGooglePressed());
+                  },
+                  child: const Text(
+                    'SIGN IN WITH GOOGLE',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ))
             ],
           ),
         );
