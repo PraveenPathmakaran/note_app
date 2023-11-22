@@ -53,6 +53,9 @@ abstract class NoteDto implements _$NoteDto {
 
   factory NoteDto.fromJson(Map<String, dynamic> json) =>
       _$NoteDtoFromJson(json);
+
+  factory NoteDto.fromFireStore(DocumentSnapshot doc) =>
+      NoteDto.fromJson(doc.data() as Map<String, dynamic>).copyWith(id: doc.id);
 }
 
 @JsonSerializable()

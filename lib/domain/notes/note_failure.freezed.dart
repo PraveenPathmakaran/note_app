@@ -19,32 +19,39 @@ mixin _$NoteFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() insufficientPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? unexpected,
+    TResult? Function()? insufficientPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexcepted value) unexpected,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Unexcepted value)? unexpected,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexcepted value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +114,7 @@ class _$UnexceptedImpl implements _Unexcepted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() insufficientPermission,
   }) {
     return unexpected();
   }
@@ -115,6 +123,7 @@ class _$UnexceptedImpl implements _Unexcepted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? unexpected,
+    TResult? Function()? insufficientPermission,
   }) {
     return unexpected?.call();
   }
@@ -123,6 +132,7 @@ class _$UnexceptedImpl implements _Unexcepted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -135,6 +145,8 @@ class _$UnexceptedImpl implements _Unexcepted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexcepted value) unexpected,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
   }) {
     return unexpected(this);
   }
@@ -143,6 +155,7 @@ class _$UnexceptedImpl implements _Unexcepted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Unexcepted value)? unexpected,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
   }) {
     return unexpected?.call(this);
   }
@@ -151,6 +164,7 @@ class _$UnexceptedImpl implements _Unexcepted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexcepted value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -162,4 +176,110 @@ class _$UnexceptedImpl implements _Unexcepted {
 
 abstract class _Unexcepted implements NoteFailure {
   const factory _Unexcepted() = _$UnexceptedImpl;
+}
+
+/// @nodoc
+abstract class _$$InsufficientPermissionImplCopyWith<$Res> {
+  factory _$$InsufficientPermissionImplCopyWith(
+          _$InsufficientPermissionImpl value,
+          $Res Function(_$InsufficientPermissionImpl) then) =
+      __$$InsufficientPermissionImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InsufficientPermissionImplCopyWithImpl<$Res>
+    extends _$NoteFailureCopyWithImpl<$Res, _$InsufficientPermissionImpl>
+    implements _$$InsufficientPermissionImplCopyWith<$Res> {
+  __$$InsufficientPermissionImplCopyWithImpl(
+      _$InsufficientPermissionImpl _value,
+      $Res Function(_$InsufficientPermissionImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$InsufficientPermissionImpl implements _InsufficientPermission {
+  const _$InsufficientPermissionImpl();
+
+  @override
+  String toString() {
+    return 'NoteFailure.insufficientPermission()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InsufficientPermissionImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPermission,
+  }) {
+    return insufficientPermission();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? unexpected,
+    TResult? Function()? insufficientPermission,
+  }) {
+    return insufficientPermission?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
+    required TResult orElse(),
+  }) {
+    if (insufficientPermission != null) {
+      return insufficientPermission();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexcepted value) unexpected,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+  }) {
+    return insufficientPermission(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Unexcepted value)? unexpected,
+    TResult? Function(_InsufficientPermission value)? insufficientPermission,
+  }) {
+    return insufficientPermission?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexcepted value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    required TResult orElse(),
+  }) {
+    if (insufficientPermission != null) {
+      return insufficientPermission(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InsufficientPermission implements NoteFailure {
+  const factory _InsufficientPermission() = _$InsufficientPermissionImpl;
 }
