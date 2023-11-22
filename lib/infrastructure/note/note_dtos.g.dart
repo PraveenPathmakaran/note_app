@@ -8,7 +8,7 @@ part of 'note_dtos.dart';
 
 ServerTimestampConvertor _$ServerTimestampConvertorFromJson(
         Map<String, dynamic> json) =>
-    const ServerTimestampConvertor();
+    ServerTimestampConvertor();
 
 Map<String, dynamic> _$ServerTimestampConvertorToJson(
         ServerTimestampConvertor instance) =>
