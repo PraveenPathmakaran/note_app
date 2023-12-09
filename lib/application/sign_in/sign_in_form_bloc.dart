@@ -69,13 +69,14 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   ) async {
     final bool isEmailValid = state.emailAddress.isValid();
     final bool isPasswordValid = state.password.isValid();
+    Either<AuthFailure, Unit>? failureOrSuccess;
 
     if (isEmailValid && isPasswordValid) {
       emit(state.copyWith(
         isSubmitting: true,
         authFailureOrSuccessOption: none(),
       ));
-      Either<AuthFailure, Unit> failureOrSuccess = await forwardedCall(
+      failureOrSuccess = await forwardedCall(
         emailAddress: state.emailAddress,
         password: state.password,
       );
@@ -86,14 +87,10 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
             showErrorMessages: true,
             authFailureOrSuccessOption: optionOf(failureOrSuccess)),
       );
-    } else {
-      emit(
-        state.copyWith(
-            isSubmitting: false,
-            showErrorMessages: true,
-            authFailureOrSuccessOption: none()),
-      );
     }
+    emit(state.copyWith(
+        isSubmitting: false,
+        authFailureOrSuccessOption: optionOf(failureOrSuccess)));
   }
 }
 // @override
