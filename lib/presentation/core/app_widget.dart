@@ -23,6 +23,8 @@ class AppWidget extends StatelessWidget {
         routerConfig: appRouter.config(),
         debugShowCheckedModeBanner: false,
         theme: ThemeData.light().copyWith(
+          floatingActionButtonTheme:
+              FloatingActionButtonThemeData(backgroundColor: Colors.blue[900]),
           primaryColor: Colors.green[800],
           inputDecorationTheme: InputDecorationTheme(
               border:
