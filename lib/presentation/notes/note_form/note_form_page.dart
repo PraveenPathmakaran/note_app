@@ -11,6 +11,7 @@ import '../../../domain/notes/note.dart';
 import 'widgets/add_todo_tile_widget.dart';
 import 'widgets/body_field_widget.dart';
 import 'widgets/color_field_widget.dart';
+import 'widgets/todo_list_widget.dart';
 
 @RoutePage()
 class NoteFormPage extends StatelessWidget {
@@ -92,6 +93,7 @@ class NoteFormPageScaffold extends StatelessWidget {
                 children: [
                   BodyField(),
                   ColorField(),
+                  TodoList(),
                   AddTodoTile(),
                 ],
               ),
