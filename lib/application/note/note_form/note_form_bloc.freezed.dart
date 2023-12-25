@@ -137,7 +137,7 @@ class _$InitializedImpl implements _Initialized {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitializedImpl &&
@@ -290,7 +290,7 @@ class _$BodyChangedImpl implements _BodyChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BodyChangedImpl &&
@@ -441,7 +441,7 @@ class _$ColorChangedImpl implements _ColorChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ColorChangedImpl &&
@@ -592,7 +592,7 @@ class _$TodosChangedImpl implements _TodosChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TodosChangedImpl &&
@@ -726,7 +726,7 @@ class _$SavedImpl implements _Saved {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$SavedImpl);
   }
@@ -989,7 +989,7 @@ class _$NoteFormStateImpl implements _NoteFormState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NoteFormStateImpl &&

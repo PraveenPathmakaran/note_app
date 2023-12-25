@@ -152,7 +152,7 @@ class _$EmailChangedImpl with DiagnosticableTreeMixin implements EmailChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmailChangedImpl &&
@@ -321,7 +321,7 @@ class _$PasswordChangedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PasswordChangedImpl &&
@@ -476,7 +476,7 @@ class _$RegisterWithEmailAndPasswordPressedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterWithEmailAndPasswordPressedImpl);
@@ -617,7 +617,7 @@ class _$SignInWithEmailAndPasswordPressedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignInWithEmailAndPasswordPressedImpl);
@@ -757,7 +757,7 @@ class _$SignInWithGooglePressedImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignInWithGooglePressedImpl);
@@ -1030,7 +1030,7 @@ class _$SignInFormStateImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignInFormStateImpl &&

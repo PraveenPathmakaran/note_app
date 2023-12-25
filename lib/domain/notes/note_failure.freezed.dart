@@ -108,7 +108,7 @@ class _$UnexceptedImpl implements _Unexcepted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$UnexceptedImpl);
   }
@@ -219,7 +219,7 @@ class _$InsufficientPermissionImpl implements _InsufficientPermission {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InsufficientPermissionImpl);
@@ -329,7 +329,7 @@ class _$UnableToUpdateImpl implements _UnableToUpdate {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$UnableToUpdateImpl);
   }

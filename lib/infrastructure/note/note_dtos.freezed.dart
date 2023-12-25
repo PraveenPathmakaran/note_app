@@ -187,7 +187,7 @@ class _$NoteDtoImpl extends _NoteDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NoteDtoImpl &&
@@ -373,7 +373,7 @@ class _$TodoItemDtoImpl extends _TodoItemDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TodoItemDtoImpl &&

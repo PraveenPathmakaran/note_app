@@ -65,7 +65,7 @@ class NotesOverViewPage extends StatelessWidget {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              //Todo navigate to noteform page
+              context.router.push(NoteFormRoute(editNote: null));
             },
             child: const Icon(Icons.add),
           ),

@@ -8,7 +8,10 @@ import 'package:note_app/injection.dart';
 import 'package:note_app/presentation/routes/router.dart';
 
 import '../../../domain/notes/note.dart';
+import 'widgets/body_field_widget.dart';
+import 'widgets/color_field_widget.dart';
 
+@RoutePage()
 class NoteFormPage extends StatelessWidget {
   final Note? editNote;
   const NoteFormPage({super.key, required this.editNote});
@@ -75,6 +78,24 @@ class NoteFormPageScaffold extends StatelessWidget {
             },
           )
         ],
+      ),
+      body: BlocBuilder<NoteFormBloc, NoteFormState>(
+        buildWhen: (p, c) => p.showErrorMessages != c.showErrorMessages,
+        builder: (context, state) {
+          return Form(
+            autovalidateMode: state.showErrorMessages
+                ? AutovalidateMode.always
+                : AutovalidateMode.disabled,
+            child: const SingleChildScrollView(
+              child: Column(
+                children: [
+                  BodyField(),
+                  ColorField(),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }

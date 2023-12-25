@@ -131,7 +131,7 @@ class _$TodoItemPrimitiveImpl extends _TodoItemPrimitive {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TodoItemPrimitiveImpl &&

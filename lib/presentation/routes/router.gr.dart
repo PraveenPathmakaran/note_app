@@ -15,6 +15,16 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    NoteFormRoute.name: (routeData) {
+      final args = routeData.argsAs<NoteFormRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: NoteFormPage(
+          key: args.key,
+          editNote: args.editNote,
+        ),
+      );
+    },
     NotesOverViewRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -34,6 +44,44 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [NoteFormPage]
+class NoteFormRoute extends PageRouteInfo<NoteFormRouteArgs> {
+  NoteFormRoute({
+    Key? key,
+    required Note? editNote,
+    List<PageRouteInfo>? children,
+  }) : super(
+          NoteFormRoute.name,
+          args: NoteFormRouteArgs(
+            key: key,
+            editNote: editNote,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'NoteFormRoute';
+
+  static const PageInfo<NoteFormRouteArgs> page =
+      PageInfo<NoteFormRouteArgs>(name);
+}
+
+class NoteFormRouteArgs {
+  const NoteFormRouteArgs({
+    this.key,
+    required this.editNote,
+  });
+
+  final Key? key;
+
+  final Note? editNote;
+
+  @override
+  String toString() {
+    return 'NoteFormRouteArgs{key: $key, editNote: $editNote}';
+  }
 }
 
 /// generated route for
