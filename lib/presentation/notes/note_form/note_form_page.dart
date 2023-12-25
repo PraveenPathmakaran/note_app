@@ -8,6 +8,7 @@ import 'package:note_app/injection.dart';
 import 'package:note_app/presentation/routes/router.dart';
 
 import '../../../domain/notes/note.dart';
+import 'widgets/add_todo_tile_widget.dart';
 import 'widgets/body_field_widget.dart';
 import 'widgets/color_field_widget.dart';
 
@@ -91,6 +92,7 @@ class NoteFormPageScaffold extends StatelessWidget {
                 children: [
                   BodyField(),
                   ColorField(),
+                  AddTodoTile(),
                 ],
               ),
             ),

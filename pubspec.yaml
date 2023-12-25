@@ -46,6 +46,7 @@ dependencies:
   injectable: ^2.3.2
   json_annotation: ^4.8.1
   kt_dart: ^1.1.0
+  provider: ^6.1.1
   rxdart: ^0.27.7
   uuid: ^4.2.1
 
