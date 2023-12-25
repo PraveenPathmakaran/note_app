@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/application/auth/auth_bloc.dart';
 import 'package:note_app/application/note/note_watcher/note_watcher_bloc.dart';
 import 'package:note_app/injection.dart';
+import 'package:note_app/presentation/notes/notes_overview/widgets/note_overview_body_widget.dart';
+import 'package:note_app/presentation/notes/notes_overview/widgets/uncompleted_switch.dart';
 
 import '../../../application/note/note_actor/note_actor_bloc.dart';
 import '../../routes/router.dart';
@@ -59,11 +61,7 @@ class NotesOverViewPage extends StatelessWidget {
                   context.read<AuthBloc>().add(const AuthEvent.signedOut());
                 },
                 icon: const Icon(Icons.exit_to_app)),
-            actions: <Widget>[
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.indeterminate_check_box))
-            ],
+            actions: const <Widget>[UnCompletedSwitch()],
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
@@ -71,6 +69,7 @@ class NotesOverViewPage extends StatelessWidget {
             },
             child: const Icon(Icons.add),
           ),
+          body: const NoteOverViewBody(),
         ),
       ),
     );
