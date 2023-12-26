@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/application/note/note_form/note_form_bloc.dart';
 import 'package:note_app/injection.dart';
+import 'package:note_app/presentation/notes/note_form/misc/todo_item_presentation_classes.dart';
 import 'package:note_app/presentation/routes/router.dart';
+import 'package:provider/provider.dart';
 
 import '../../../domain/notes/note.dart';
 import 'widgets/add_todo_tile_widget.dart';
@@ -84,18 +86,21 @@ class NoteFormPageScaffold extends StatelessWidget {
       body: BlocBuilder<NoteFormBloc, NoteFormState>(
         buildWhen: (p, c) => p.showErrorMessages != c.showErrorMessages,
         builder: (context, state) {
-          return Form(
-            autovalidateMode: state.showErrorMessages
-                ? AutovalidateMode.always
-                : AutovalidateMode.disabled,
-            child: const SingleChildScrollView(
-              child: Column(
-                children: [
-                  BodyField(),
-                  ColorField(),
-                  TodoList(),
-                  AddTodoTile(),
-                ],
+          return ChangeNotifierProvider(
+            create: (_) => FormTodos(),
+            child: Form(
+              autovalidateMode: state.showErrorMessages
+                  ? AutovalidateMode.always
+                  : AutovalidateMode.disabled,
+              child: const SingleChildScrollView(
+                child: Column(
+                  children: [
+                    BodyField(),
+                    ColorField(),
+                    TodoList(),
+                    AddTodoTile(),
+                  ],
+                ),
               ),
             ),
           );
